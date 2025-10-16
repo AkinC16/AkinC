@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akin Sari - IT Specialist & Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+            /* Style for the cursor spotlight effect */
+            background-image: radial-gradient(
+                circle 400px at var(--x, 50%) var(--y, 50%),
+                rgba(29, 78, 216, 0.15),
+                transparent 80%
+            );
+        }
+        .glass-effect {
+            background: rgba(13, 30, 56, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(45, 212, 191, 0.2);
+        }
+        .highlight {
+            color: #64ffda;
+        }
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ccd6f6;
+            margin-bottom: 2rem;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 2px;
+            width: 200px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: #233554;
+        }
+
+        .type-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="leading-normal">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-2xl font-bold highlight">AS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Over Mij</a>
+                        <a href="#skills" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Projecten</a>
+                        <a href="#interests" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Interesses</a>
+                        <a href="#experience" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Ervaring</a>
+                        <a href="#contact" class="text-gray-300 hover:highlight px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Over Mij</a>
+                <a href="#skills" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a>
+                <a href="#projects" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Projecten</a>
+                <a href="#interests" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Interesses</a>
+                <a href="#experience" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Ervaring</a>
+                <a href="#contact" class="block text-gray-300 hover:highlight px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+
+
+        <section id="hero" class="min-h-screen flex flex-col justify-center">
+            <div>
+                <p class="text-lg highlight mb-4">Hallo, mijn naam is</p>
+                <h1 id="typewriter-name" class="text-4xl md:text-7xl font-bold text-slate-200"></h1>
+                <h2 id="typewriter-title" class="text-4xl md:text-6xl font-bold text-slate-400 mt-2 min-h-[50px] md:min-h-[72px]"></h2>
+                <p class="mt-6 max-w-xl text-slate-400 fade-in-up">
+                    Ik ben een gedreven MBO 4-student en autodidact ontwikkelaar met een passie voor het oplossen van complexe problemen. Van het opzetten van servers en netwerken tot het bouwen van AI-gedreven applicaties, ik hou ervan om te leren en tastbare resultaten te creëren.
+                </p>
+                <a href="#contact" class="inline-block mt-8 bg-transparent hover:bg-teal-500 text-teal-300 font-semibold hover:text-white py-3 px-6 border border-teal-400 hover:border-transparent rounded transition-all duration-300 fade-in-up">
+                    Neem contact op
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 fade-in-up"><h2 class="section-heading">Over Mij</h2><div class="grid grid-cols-1 md:grid-cols-5 gap-10"><div class="md:col-span-3 text-slate-400 space-y-4"><p>Mijn fascinatie voor technologie begon niet in het klaslokaal, maar met een simpele vraag: "Hoe werkt dit?". Deze nieuwsgierigheid drijft mij om voortdurend nieuwe vaardigheden te leren en toe te passen in praktische projecten. Of het nu gaat om het opzetten van een lokaal gehoste AI-assistent of het bouwen van een e-commerce platform, ik vind voldoening in het hele proces: van idee tot een functionerend product.</p><p>Mijn MBO-opleiding in IT Systems and Devices heeft mij een solide basis gegeven in systeem- en netwerkbeheer, maar mijn persoonlijke projecten zijn waar ik mijn vaardigheden echt heb ontwikkeld. Ik leer snel, ben niet bang voor een uitdaging en geloof dat elke mislukking een leermoment is op weg naar succes.</p><p>Ik zoek een uitdagende stageplek waar ik mijn technische kennis kan inzetten, kan bijdragen aan een professioneel team en verder kan groeien als IT-specialist.</p></div><div class="md:col-span-2 flex justify-center items-start"><div class="w-64 h-64 rounded-lg bg-teal-500/10 border-2 border-teal-400 overflow-hidden group"><img src="https://placehold.co/300x300/0a192f/64ffda?text=AS" alt="Akin Sari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div></div></div></section>
+        
+        <section id="skills" class="py-24 fade-in-up">
+            <h2 class="section-heading">Mijn Competenties</h2>
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-slate-300 mb-4 highlight">Technische Skills</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-slate-300">
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Besturingssystemen</h3><ul class="list-disc list-inside space-y-1 text-sm"><li>Windows 10/11</li><li>Windows Server</li><li>Linux (Debian/Ubuntu)</li></ul></div>
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Netwerkbeheer</h3><ul class="list-disc list-inside space-y-1 text-sm"><li>Cisco Basics</li><li>TCP/IP, DNS, DHCP</li><li>Firewall Configuratie</li></ul></div>
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Talen & Frameworks</h3><ul class="list-disc list-inside space-y-1 text-sm"><li>Python</li><li>HTML & CSS</li><li>Basis Java (Android)</li></ul></div>
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Tools & Software</h3><ul class="list-disc list-inside space-y-1 text-sm"><li>Microsoft 365 / AD</li><li>VMware</li><li>Git & GitHub</li><li>Adobe Photoshop</li></ul></div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-slate-300 mb-4 highlight">Conceptuele & Professionele Skills</h3>
+                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-slate-300">
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Analytisch Denken</h3><p class="text-sm">Data analyseren en visualiseren om inzichten en patronen te ontdekken.</p></div>
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Systeemarchitectuur</h3><p class="text-sm">Complexe systemen ontwerpen en bouwen met een server-client model.</p></div>
+                    <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Zelfstandig Leren</h3><p class="text-sm">Snel nieuwe technologieën en programmeertalen eigen maken voor projecten.</p></div>
+                     <div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg text-slate-200 mb-2">Probleemoplossing</h3><p class="text-sm">Creatieve en effectieve oplossingen vinden voor technische uitdagingen.</p></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projects" class="py-24 fade-in-up">
+            <h2 class="section-heading">Mijn Projecten</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+
+                <div class="glass-effect rounded-lg p-6 h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/50">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-200 mb-2">Local AI Voice Assistant</h3>
+                        <p class="text-slate-400 text-sm">Een lokaal gehoste spraakassistent, van scratch gebouwd. Het systeem gebruikt een custom Android-app, een lokaal LLM en speech-to-text om spraakopdrachten te verwerken en uit te voeren.</p>
+                    </div>
+                    <div class="mt-4">
+                         <p class="text-xs font-semibold text-slate-300 mb-2">Kerncompetenties:</p>
+                         <ul class="flex flex-wrap gap-2">
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Problem Solving</li>
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Full-Stack Dev</li>
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">System Architecture</li>
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Mobile Development</li>
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">REST API Design</li>
+                            <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Python</li>
+                         </ul>
+                    </div>
+                </div>
+
+
+                <div class="glass-effect rounded-lg p-6 h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/50">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-200 mb-2">Chat Data Analytics Engine</h3>
+                        <p class="text-slate-400 text-sm">Tool die chatgeschiedenis van Discord exporteert en visualiseert (activiteit, emoji-gebruik). Integreert een LLM voor geautomatiseerde analyse van relatiedynamiek tussen gebruikers.</p>
+                    </div>
+                    <div class="mt-4">
+                         <p class="text-xs font-semibold text-slate-300 mb-2">Kerncompetenties:</p>
+                         <ul class="flex flex-wrap gap-2">
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Data Analysis</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Statistical Insight</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">NLP</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Python (Pandas)</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Data Visualization</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">API Usage</li>
+                         </ul>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-lg p-6 h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/50">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 12v.01M12 12v.01M12 6.01M12 6.01M12 6.01M12 18.01M12 18.01M12 18.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-200 mb-2">AI-Powered Lead Generator</h3>
+                        <p class="text-slate-400 text-sm">Applicatie die OpenStreetMap scant op basis van een natuurlijke taal-query, resultaten filtert en rangschikt met een AI-model, en de beste zakelijke leads presenteert met een motivering.</p>
+                    </div>
+                     <div class="mt-4">
+                         <p class="text-xs font-semibold text-slate-300 mb-2">Kerncompetenties:</p>
+                         <ul class="flex flex-wrap gap-2">
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Workflow Automation</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Strategic Thinking</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Data Mining</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Algorithm Design</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">Python</li>
+                             <li class="bg-teal-400/10 text-teal-300 text-xs font-mono px-2 py-1 rounded-full">API Usage</li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="interests" class="py-24 fade-in-up"><h2 class="section-heading">Interesses</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-slate-300"><div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg highlight mb-2">Technologie & Innovatie</h3><p class="text-sm">Experimenteren met hardware (Raspberry Pi), nieuwe software bouwen en retro consoles modificeren. Mijn passie voor technologie stopt niet na schooltijd.</p></div><div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg highlight mb-2">Discipline & Zelfverbetering</h3><p class="text-sm">Al 8 jaar ben ik toegewijd aan fitness. Het continu verleggen van mijn grenzen en het streven naar verbetering is een mentaliteit die ik in al mijn werk toepas.</p></div><div class="glass-effect rounded-lg p-4"><h3 class="font-bold text-lg highlight mb-2">Creativiteit & Kritisch Denken</h3><p class="text-sm">Van het lezen van filosofie tot fotografie en het bespelen van mijn elektrische gitaar, ik zoek graag naar nieuwe perspectieven en creatieve uitlaatkleppen.</p></div></div></section>
+        <section id="experience" class="py-24 fade-in-up"><h2 class="section-heading">Werkervaring</h2><div class="space-y-8"><div class="glass-effect rounded-lg p-6"><div class="flex flex-col sm:flex-row justify-between sm:items-start"><div><h3 class="text-xl font-bold text-slate-200">Eigenaar & Technisch Beheerder</h3><p class="highlight">Imugi (ImugiSW, ImugiWEB, Esports)</p></div><p class="text-sm text-slate-400 mt-2 sm:mt-0 sm:text-right">apr. 2025 - Heden</p></div><ul class="list-disc list-inside mt-4 text-slate-400 space-y-2"><li>Eigen e-commerce, webdevelopment en e-sports platform opgezet en beheerd.</li><li>Volledig verantwoordelijk voor webdevelopment, technisch onderhoud en de online infrastructuur.</li><li>Praktische ervaring met serverbeheer, databases en het implementeren van online betaalsystemen.</li></ul></div><div class="glass-effect rounded-lg p-6"><div class="flex flex-col sm:flex-row justify-between sm:items-start"><div><h3 class="text-xl font-bold text-slate-200">Assistent Medewerker</h3><p class="highlight">McDonald's</p></div><p class="text-sm text-slate-400 mt-2 sm:mt-0 sm:text-right">feb. 2024 - Heden</p></div><ul class="list-disc list-inside mt-4 text-slate-400 space-y-2"><li>Ervaring opgedaan met klantenservice, teamwork en presteren onder hoge druk in een snelle omgeving.</li></ul></div></div></section>
+        <section id="education" class="py-24 fade-in-up"><h2 class="section-heading">Opleiding</h2><div class="glass-effect rounded-lg p-6"><div class="flex flex-col sm:flex-row justify-between sm:items-start"><div><h3 class="text-xl font-bold text-slate-200">MBO 4 IT Expert Systems and Devices</h3><p class="highlight">Techniek College Schiedamseweg</p></div><p class="text-sm text-slate-400 mt-2 sm:mt-0 sm:text-right">2024 - 2027 (verwacht)</p></div></div></section>
+        <section id="contact" class="py-24 text-center fade-in-up"><h2 class="text-2xl font-semibold text-slate-300">Interesse om samen te werken?</h2><h3 class="text-4xl md:text-5xl font-bold text-slate-100 mt-2">Neem contact op.</h3><p class="max-w-xl mx-auto text-slate-400 mt-4">Ik ben per direct beschikbaar voor een uitdagende MBO-stage in de IT. Ik ben ervan overtuigd dat mijn praktische ervaring en leergierigheid een aanwinst zullen zijn voor uw team.</p><div class="mt-8 flex justify-center items-center space-x-6"><a href="mailto:akin.c7274@gmail.com" class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded transition-colors duration-300">Stuur een e-mail</a><a href="https://www.linkedin.com/in/akinsari/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:highlight"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg></a><a href="https://github.com/AkinSari" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:highlight"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/></svg></a></div></section>
+
+    </main>
+
+    <footer class="text-center py-8 text-slate-500 text-sm">
+        <p>Gebouwd door Akin Sari. Design geïnspireerd door de online developer community.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            body.addEventListener('mousemove', e => {
+                body.style.setProperty('--x', e.clientX + 'px');
+                body.style.setProperty('--y', e.clientY + 'px');
+            });
+
+            const nameEl = document.getElementById('typewriter-name');
+            const titleEl = document.getElementById('typewriter-title');
+            const nameText = "Akin Sari.";
+            const titleText = "Ik bouw en beheer IT-oplossingen.";
+            
+            function typeWriter(element, text, speed, callback) {
+                let i = 0;
+                element.innerHTML = "";
+                element.classList.add('type-cursor');
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        element.classList.remove('type-cursor');
+                        if(callback) callback();
+                    }
+                }
+                type();
+            }
+
+            typeWriter(nameEl, nameText, 75, () => {
+                typeWriter(titleEl, titleText, 50);
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in-up');
+            elementsToAnimate.forEach(el => observer.observe(el));
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
